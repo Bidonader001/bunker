@@ -150,6 +150,37 @@ height:180px;
 object-fit:cover;
 border-radius:10px;
 }
+.img-slider{
+display:flex;
+overflow-x:auto;
+gap:8px;
+
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+
+/* makes drag smoother on mobile */
+-webkit-overflow-scrolling: touch;
+
+/* cursor for desktop */
+cursor: grab;
+}
+
+.img-slider:active{
+cursor: grabbing;
+}
+
+.img-slider img{
+flex:0 0 100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+scroll-snap-align:center;
+}
+
+/* hide scrollbar */
+.img-slider::-webkit-scrollbar{
+display:none;
+}
 
 .card h3{
 text-align:center;
@@ -178,6 +209,7 @@ width:100%;
 .title-row{
 flex-wrap:wrap;
 }
+
 }
 
 </style>
@@ -223,7 +255,11 @@ Where competition meets adrenaline. From exclusive arcade machines to high-energ
 <section class="products">
 
 <div class="card">
-<img src="axe.jpeg">
+<div class="img-slider">
+    
+  <img src="touch.jpeg">
+  <img src="hercules (1).jpeg">
+</div>
 <h3>Axe</h3>
 <div class="tags">Throw axes at the target and hit the bullseye</div>
 <div class="price"> Duration (20 Mins)<br>Minumum 2 Players → 400 EGP   <br>  3 or more players  each player 100 EGP <br> + 100 EGP for the room
@@ -248,7 +284,7 @@ Where competition meets adrenaline. From exclusive arcade machines to high-energ
 <img src="boxing.jpeg">
 <h3>Boxing</h3>
 <div class="tags">Punch hard and test your power score</div>
-<div class="price">70EGP /3Punchs</div>
+<div class="price">70EGP 3 Punchs</div>
 </div>
 <div class="card">
 <img src="arcade.jpeg">
